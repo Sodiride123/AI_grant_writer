@@ -3,7 +3,7 @@
 set -e
 
 git clone https://github.com/Sodiride123/AI_grant_writer.git /workspace/AI_grant_writer 2>/dev/null || echo "App already exists at /workspace/AI_grant_writer"
-pip install flask flask-cors gunicorn python-docx pypdf2 fpdf2 anthropic 2>/dev/null
+pip install flask flask-cors gunicorn python-docx pypdf2 fpdf2 pdfplumber anthropic 2>/dev/null
 mkdir -p /workspace/AI_grant_writer/uploads /workspace/AI_grant_writer/jobs
 
 # Install supervisor config from repo
