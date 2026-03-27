@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GrantWriter Pro — AI-Powered Grant Application Generator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/static/css/style.css" />
+<script src="https://sites.super.betamyninja.ai/_assets/ninja-daytona-script.js"></script>
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar">
+  <a href="#" class="nav-brand">
+    <div class="nav-logo">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>
+    </div>
+    <div class="nav-title">GrantWriter <span>Pro</span></div>
+  </a>
+  <div class="nav-actions">
+    <span class="nav-badge">
+      <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+      AI-Powered
+    </span>
+    <button class="btn btn-outline btn-sm" onclick="showHistory()">
+      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      My Applications
+    </button>
+    <a href="#app-section" class="btn btn-primary btn-sm" onclick="scrollToApp(); return false;">
+      Start Writing
+      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+    </a>
+  </div>
+</nav>
+
+<!-- ===== HERO SECTION ===== -->
+<section class="hero" id="home">
+  <div class="hero-bg-grid"></div>
+  <div class="hero-bg-glow"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">
+      <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="8 21 12 17 16 21"/><line x1="12" y1="17" x2="12" y2="10"/><path d="M7 4h10l2 3-2 3H7L5 7l2-3z"/><path d="M5 7c0 5 2 9 7 9s7-4 7-9"/></svg>
+      Trusted by Grant Writers Nationwide
+    </div>
+    <h1 class="hero-title">
+      Win More Grants with<br/>
+      <span class="gradient-text">AI-Powered Writing</span>
+    </h1>
+    <p class="hero-subtitle">
+      Upload your RFP or NOFO document. Enter your organization details.
+      Get a complete, compliance-checked grant application draft in minutes — not weeks.
+    </p>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="hero-stat-value">6</div>
+        <div class="hero-stat-label">Complete Sections</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-value">~5 min</div>
+        <div class="hero-stat-label">Generation Time</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-value">100%</div>
+        <div class="hero-stat-label">RFP-Aligned</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-value">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <div class="hero-stat-label">Compliance Checked</div>
+      </div>
+    </div>
+    <div class="hero-cta">
+      <button class="btn btn-primary btn-lg" onclick="scrollToApp()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        Generate My Grant Application
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FEATURES SECTION ===== -->
+<section style="padding:5rem 2rem;background:var(--white);">
+  <div style="max-width:800px;margin:0 auto;text-align:center;">
+    <div class="section-eyebrow">How It Works</div>
+    <h2 class="section-title" style="margin-bottom:3rem;">Three Steps to a Complete Application</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2rem;">
+      <div>
+        <div class="how-step-num">1</div>
+        <h3 style="font-weight:700;margin-bottom:0.5rem;color:var(--gray-900);">Upload Your RFP</h3>
+        <p style="color:var(--gray-500);font-size:0.9rem;">Drag and drop your grant opportunity document (PDF, DOCX, or TXT)</p>
+      </div>
+      <div>
+        <div class="how-step-num">2</div>
+        <h3 style="font-weight:700;margin-bottom:0.5rem;color:var(--gray-900);">Enter Org Details</h3>
+        <p style="color:var(--gray-500);font-size:0.9rem;">Fill in your organization's mission, capacity, experience, and project goals</p>
+      </div>
+      <div>
+        <div class="how-step-num">3</div>
+        <h3 style="font-weight:700;margin-bottom:0.5rem;color:var(--gray-900);">Get Your Application</h3>
+        <p style="color:var(--gray-500);font-size:0.9rem;">Receive a complete, compliance-checked grant application draft in minutes</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding:5rem 2rem;background:var(--white);">
+  <div style="max-width:1100px;margin:0 auto;">
+    <div class="section-header">
+      <div class="section-eyebrow">What You Get</div>
+      <h2 class="section-title">Everything You Need to Win</h2>
+      <p class="section-subtitle">GrantWriter Pro generates a complete, professional grant application tailored to your RFP.</p>
+    </div>
+    <div class="features-grid">
+
+      <div class="feature-card">
+        <div class="feature-icon" style="background:#e0e7ff;color:#4F46E5;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+        </div>
+        <div class="feature-title">Project Narrative</div>
+        <div class="feature-desc">Compelling, data-driven narrative including statement of need, project description, innovation, and sustainability plan.</div>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon" style="background:#e0e7ff;color:#6366F1;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+        </div>
+        <div class="feature-title">Goals & Objectives</div>
+        <div class="feature-desc">SMART goals with measurable KPIs, logic model summary, and short/long-term outcome framework.</div>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon" style="background:#d1fae5;color:#059669;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        </div>
+        <div class="feature-title">Methodology</div>
+        <div class="feature-desc">Detailed implementation plan with phased timeline, evidence base, risk management, and quality assurance.</div>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon" style="background:#fef3c7;color:#d97706;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+        </div>
+        <div class="feature-title">Evaluation Plan</div>
+        <div class="feature-desc">Rigorous evaluation framework with data collection methods, performance indicators, and CQI process.</div>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon" style="background:#fee2e2;color:#dc2626;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        </div>
+        <div class="feature-title">Budget Justification</div>
+        <div class="feature-desc">Detailed budget narrative with line-item justifications following 2 CFR 200 federal cost principles.</div>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon" style="background:#fce7f3;color:#be185d;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="8 21 12 17 16 21"/><line x1="12" y1="17" x2="12" y2="10"/><path d="M7 4h10l2 3-2 3H7L5 7l2-3z"/><path d="M5 7c0 5 2 9 7 9s7-4 7-9"/></svg>
+        </div>
+        <div class="feature-title">Org Capacity</div>
+        <div class="feature-desc">Demonstrates organizational track record, financial management, staffing, and community relationships.</div>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon" style="background:#ecfdf5;color:#059669;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="m9 14 2 2 4-4"/></svg>
+        </div>
+        <div class="feature-title">Compliance Checklist</div>
+        <div class="feature-desc">Automated checklist matching every RFP requirement with completion status and reviewer score prediction.</div>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon" style="background:#eef2ff;color:#4F46E5;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01M16 6h.01M12 6h.01M12 10h.01M12 14h.01M8 10h.01M8 14h.01M16 10h.01M16 14h.01"/></svg>
+        </div>
+        <div class="feature-title">Agency Intelligence</div>
+        <div class="feature-desc">Deep research on funding agency priorities, past awards, reviewer preferences, and success factors.</div>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon" style="background:#fefce8;color:#a16207;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </div>
+        <div class="feature-title">RFP Analysis</div>
+        <div class="feature-desc">Automated extraction of evaluation criteria, eligibility, deadlines, funding amounts, and key requirements.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="section-divider" style="max-width:1100px;margin:0 auto;"></div>
+
+<!-- ===== MAIN APP SECTION ===== -->
+<section class="app-section" id="app-section">
+  <div class="section-header">
+    <div class="section-eyebrow">Get Started</div>
+    <h2 class="section-title">Generate Your Grant Application</h2>
+    <p class="section-subtitle">Upload your RFP/NOFO document and provide organization details to generate a complete application.</p>
+  </div>
+
+  <!-- FORM WRAPPER -->
+  <div id="form-wrapper">
+    <div id="upload-section">
+
+      <!-- DROPZONE -->
+      <div style="margin-bottom:2rem;">
+        <label class="form-label" style="margin-bottom:0.75rem;font-size:1rem;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          Upload RFP / NOFO Document <span class="required">*</span>
+        </label>
+        <div class="dropzone" id="dropzone">
+          <div class="dropzone-content">
+            <div class="dropzone-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 16 12 12 8 16"/><line x1="12" y1="12" x2="12" y2="21"/><path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"/></svg>
+            </div>
+            <div class="dropzone-title">Drop your RFP or NOFO document here</div>
+            <div class="dropzone-subtitle">or click to browse your files</div>
+            <div class="dropzone-formats">
+              <span class="format-badge">PDF</span>
+              <span class="format-badge">DOCX</span>
+              <span class="format-badge">DOC</span>
+              <span class="format-badge">TXT</span>
+            </div>
+          </div>
+          <input type="file" id="rfp-file" accept=".pdf,.docx,.doc,.txt,.md" />
+        </div>
+        <div id="file-selected" style="display:none;margin-top:0.75rem;"></div>
+      </div>
+
+      <!-- ORG BASICS -->
+      <div class="form-section">
+        <div class="form-section-header">
+          <div class="form-section-title">
+            <div class="form-section-icon" style="background:#e0e7ff;color:#4F46E5;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            </div>
+            Organization Basics
+          </div>
+          <span class="form-section-chevron">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </span>
+        </div>
+        <div class="form-section-body">
+          <div class="form-grid">
+            <div class="form-group">
+              <label class="form-label" for="org-name">Organization Name <span class="required">*</span></label>
+              <input type="text" id="org-name" class="form-input" placeholder="e.g., Community Health Partners, Inc." />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="org-type">Organization Type</label>
+              <select id="org-type" class="form-select">
+                <option value="">Select type...</option>
+                <option value="Nonprofit 501(c)(3)">Nonprofit 501(c)(3)</option>
+                <option value="Government Agency">Government Agency</option>
+                <option value="Tribal Organization">Tribal Organization</option>
+                <option value="University/Academic">University / Academic Institution</option>
+                <option value="Community Health Center">Community Health Center</option>
+                <option value="School District">School District</option>
+                <option value="Hospital/Health System">Hospital / Health System</option>
+                <option value="Foundation">Foundation</option>
+                <option value="For-Profit">For-Profit Organization</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="org-location">City, State</label>
+              <input type="text" id="org-location" class="form-input" placeholder="e.g., Chicago, Illinois" />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="years-operating">Years Operating</label>
+              <input type="text" id="years-operating" class="form-input" placeholder="e.g., 15" />
+            </div>
+            <div class="form-group full-width">
+              <label class="form-label" for="org-mission">Organization Mission</label>
+              <textarea id="org-mission" class="form-textarea" rows="2" placeholder="Briefly describe your organization's mission and what you do..."></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PROJECT DETAILS -->
+      <div class="form-section">
+        <div class="form-section-header">
+          <div class="form-section-title">
+            <div class="form-section-icon" style="background:#e0e7ff;color:#6366F1;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+            </div>
+            Project Details
+          </div>
+          <span class="form-section-chevron">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </span>
+        </div>
+        <div class="form-section-body">
+          <div class="form-grid">
+            <div class="form-group full-width">
+              <label class="form-label" for="project-title">Proposed Project Title</label>
+              <input type="text" id="project-title" class="form-input" placeholder="e.g., Advancing Health Equity Through Community Health Workers" />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="requested-amount">Requested Amount</label>
+              <input type="text" id="requested-amount" class="form-input" placeholder="e.g., $450,000" />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="indirect-rate">Indirect Cost Rate</label>
+              <input type="text" id="indirect-rate" class="form-input" placeholder="e.g., 15% or De Minimis (10%)" />
+            </div>
+            <div class="form-group full-width">
+              <label class="form-label" for="target-population">Target Population</label>
+              <textarea id="target-population" class="form-textarea" rows="2" placeholder="Describe who your project will serve (demographics, geography, size)..."></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CAPACITY & EXPERIENCE -->
+      <div class="form-section">
+        <div class="form-section-header">
+          <div class="form-section-title">
+            <div class="form-section-icon" style="background:#d1fae5;color:#059669;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+            </div>
+            Capacity & Experience
+          </div>
+          <span class="form-section-chevron">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </span>
+        </div>
+        <div class="form-section-body">
+          <div class="form-grid">
+            <div class="form-group">
+              <label class="form-label" for="annual-budget">Annual Operating Budget</label>
+              <input type="text" id="annual-budget" class="form-input" placeholder="e.g., $2.5 million" />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="staff-count">Number of Staff / FTEs</label>
+              <input type="text" id="staff-count" class="form-input" placeholder="e.g., 45 staff, 30 FTEs" />
+            </div>
+            <div class="form-group full-width">
+              <label class="form-label" for="key-programs">Current Key Programs</label>
+              <textarea id="key-programs" class="form-textarea" rows="2" placeholder="List your main programs and services..."></textarea>
+            </div>
+            <div class="form-group full-width">
+              <label class="form-label" for="past-grants">Past Grant Experience</label>
+              <textarea id="past-grants" class="form-textarea" rows="2" placeholder="List relevant past grants (funder, amount, program)..."></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PARTNERSHIPS & STRENGTHS -->
+      <div class="form-section">
+        <div class="form-section-header">
+          <div class="form-section-title">
+            <div class="form-section-icon" style="background:#fef3c7;color:#d97706;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            Partnerships & Strengths
+          </div>
+          <span class="form-section-chevron">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </span>
+        </div>
+        <div class="form-section-body">
+          <div class="form-grid">
+            <div class="form-group full-width">
+              <label class="form-label" for="key-partners">Key Partners & Collaborators</label>
+              <textarea id="key-partners" class="form-textarea" rows="2" placeholder="List key partners and their roles in this project..."></textarea>
+            </div>
+            <div class="form-group full-width">
+              <label class="form-label" for="unique-strengths">Unique Organizational Strengths</label>
+              <textarea id="unique-strengths" class="form-textarea" rows="3" placeholder="What makes your organization uniquely qualified? Community relationships, specialized expertise, proven track record, etc."></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SUBMIT AREA -->
+      <div class="submit-area">
+        <div style="display:flex;gap:1rem;flex-wrap:wrap;align-items:center;">
+          <button class="btn-demo" id="demo-btn" onclick="runDemo()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            View Sample Output
+          </button>
+          <div class="submit-info">
+            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            Your documents are processed securely and never stored.
+          </div>
+        </div>
+        <button class="btn-generate" id="generate-btn" onclick="submitForm()">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          Generate Grant Application
+        </button>
+      </div>
+
+    </div><!-- /#upload-section -->
+  </div><!-- /#form-wrapper -->
+
+  <!-- ===== PROGRESS SECTION ===== -->
+  <div id="progress-section">
+    <div class="progress-animation">
+      <svg class="progress-ring" viewBox="0 0 120 120">
+        <defs>
+          <linearGradient id="progressGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#4F46E5"/>
+            <stop offset="100%" style="stop-color:#6366F1"/>
+          </linearGradient>
+        </defs>
+        <circle class="progress-ring-bg" cx="60" cy="60" r="52"/>
+        <circle class="progress-ring-fill" id="progress-ring-fill" cx="60" cy="60" r="52"/>
+      </svg>
+      <div class="progress-percent" id="progress-percent">0%</div>
+    </div>
+
+    <div class="progress-title">Generating Your Grant Application</div>
+    <div class="progress-step" id="progress-step">Initializing AI engine...</div>
+
+    <div class="progress-steps-list">
+      <div class="progress-step-item" id="step-item-0">
+        <span class="step-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+        </span>
+        <span>Parsing RFP document</span>
+      </div>
+      <div class="progress-step-item" id="step-item-1">
+        <span class="step-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </span>
+        <span>Analyzing requirements</span>
+      </div>
+      <div class="progress-step-item" id="step-item-2">
+        <span class="step-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01M16 6h.01M12 6h.01M12 10h.01M12 14h.01M8 10h.01M8 14h.01M16 10h.01M16 14h.01"/></svg>
+        </span>
+        <span>Researching funding agency</span>
+      </div>
+      <div class="progress-step-item" id="step-item-3">
+        <span class="step-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+        </span>
+        <span>Writing project narrative</span>
+      </div>
+      <div class="progress-step-item" id="step-item-4">
+        <span class="step-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+        </span>
+        <span>Developing goals & objectives</span>
+      </div>
+      <div class="progress-step-item" id="step-item-5">
+        <span class="step-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        </span>
+        <span>Designing methodology</span>
+      </div>
+      <div class="progress-step-item" id="step-item-6">
+        <span class="step-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+        </span>
+        <span>Creating evaluation plan</span>
+      </div>
+      <div class="progress-step-item" id="step-item-7">
+        <span class="step-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        </span>
+        <span>Building budget justification</span>
+      </div>
+      <div class="progress-step-item" id="step-item-8">
+        <span class="step-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="8 21 12 17 16 21"/><line x1="12" y1="17" x2="12" y2="10"/><path d="M7 4h10l2 3-2 3H7L5 7l2-3z"/><path d="M5 7c0 5 2 9 7 9s7-4 7-9"/></svg>
+        </span>
+        <span>Writing organizational capacity</span>
+      </div>
+      <div class="progress-step-item" id="step-item-9">
+        <span class="step-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="m9 14 2 2 4-4"/></svg>
+        </span>
+        <span>Running compliance check</span>
+      </div>
+      <div class="progress-step-item" id="step-item-10">
+        <span class="step-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+        </span>
+        <span>Generating executive summary</span>
+      </div>
+      <div class="progress-step-item" id="step-item-11">
+        <span class="step-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </span>
+        <span>Finalizing application</span>
+      </div>
+    </div>
+
+    <div style="margin-top:2rem;padding-top:1.5rem;border-top:1px solid var(--gray-200);">
+      <p style="font-size:0.85rem;color:var(--gray-400);display:flex;align-items:center;justify-content:center;gap:0.4rem;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        This typically takes 3–6 minutes. Please keep this tab open.
+      </p>
+    </div>
+  </div>
+
+  <!-- ===== RESULTS SECTION ===== -->
+  <div id="results-section">
+
+    <!-- Results Header -->
+    <div class="results-header fade-in-up">
+      <div class="results-header-content">
+        <div class="results-meta">
+          <div class="results-title-area">
+            <h2>
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:0.5rem"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              Grant Application Ready
+            </h2>
+            <p id="result-agency">Loading...</p>
+          </div>
+          <div class="results-actions">
+            <button class="btn btn-outline btn-sm" onclick="startOver()">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+              New Application
+            </button>
+            <button class="btn btn-primary btn-sm" onclick="exportApplication(null, 'pdf')">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Export PDF
+            </button>
+            <button class="btn btn-outline btn-sm" onclick="exportApplication(null, 'txt')">
+              Export TXT
+            </button>
+          </div>
+        </div>
+
+        <div class="results-info-grid">
+          <div class="results-info-card">
+            <div class="results-info-label">Program</div>
+            <div class="results-info-value" id="result-program-name">—</div>
+          </div>
+          <div class="results-info-card">
+            <div class="results-info-label">Award Ceiling</div>
+            <div class="results-info-value" id="result-amount">—</div>
+          </div>
+          <div class="results-info-card">
+            <div class="results-info-label">Deadline</div>
+            <div class="results-info-value" id="result-deadline">—</div>
+          </div>
+          <div class="results-info-card">
+            <div class="results-info-label">Project Period</div>
+            <div class="results-info-value" id="result-period">—</div>
+          </div>
+          <div class="results-info-card">
+            <div class="results-info-label">FON / CFDA</div>
+            <div class="results-info-value" id="result-fon">—</div>
+          </div>
+          <div class="results-info-card">
+            <div class="results-info-label">Compliance Score</div>
+            <div class="results-info-value" id="compliance-score-val">—</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tabs -->
+    <div class="tabs-container fade-in-up">
+      <div class="tabs-nav">
+        <button class="tab-btn active" data-tab="overview">
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+          Overview
+        </button>
+        <button class="tab-btn" data-tab="narrative">
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+          Project Narrative
+        </button>
+        <button class="tab-btn" data-tab="goals">
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+          Goals & Objectives
+        </button>
+        <button class="tab-btn" data-tab="methodology">
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+          Methodology
+        </button>
+        <button class="tab-btn" data-tab="evaluation">
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+          Evaluation
+        </button>
+        <button class="tab-btn" data-tab="budget">
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          Budget
+        </button>
+        <button class="tab-btn" data-tab="capacity">
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="8 21 12 17 16 21"/><line x1="12" y1="17" x2="12" y2="10"/><path d="M7 4h10l2 3-2 3H7L5 7l2-3z"/><path d="M5 7c0 5 2 9 7 9s7-4 7-9"/></svg>
+          Org Capacity
+        </button>
+        <button class="tab-btn" data-tab="rfp-analysis">
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          RFP Analysis
+        </button>
+        <button class="tab-btn" data-tab="agency">
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01M16 6h.01M12 6h.01M12 10h.01M12 14h.01M8 10h.01M8 14h.01M16 10h.01M16 14h.01"/></svg>
+          Agency Intel
+        </button>
+        <button class="tab-btn" data-tab="compliance">
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="m9 14 2 2 4-4"/></svg>
+          Compliance
+        </button>
+      </div>
+
+      <!-- TAB: OVERVIEW -->
+      <div class="tab-content active" id="tab-overview">
+        <div class="content-section-title">
+          <div class="content-section-icon" style="background:#e0e7ff;color:#4F46E5;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+          </div>
+          Application Overview
+        </div>
+        <div class="executive-summary-box">
+          <div class="exec-summary-label">Executive Summary</div>
+          <div class="exec-summary-text" id="executive-summary-text">Loading...</div>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1rem;margin-top:1.5rem;">
+          <div style="background:var(--gray-50);border:1.5px solid var(--gray-200);border-radius:var(--radius-xl);padding:1.5rem;">
+            <div style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.05em;color:var(--gray-400);font-weight:700;margin-bottom:0.75rem;display:flex;align-items:center;gap:0.4rem;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              Sections Generated
+            </div>
+            <div style="display:flex;flex-direction:column;gap:0.5rem;">
+              <div style="display:flex;justify-content:space-between;font-size:0.875rem;align-items:center;">
+                <span>Project Narrative</span>
+                <span class="status-pill status-pill-green">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  Complete
+                </span>
+              </div>
+              <div style="display:flex;justify-content:space-between;font-size:0.875rem;align-items:center;">
+                <span>Goals & Objectives</span>
+                <span class="status-pill status-pill-green">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  Complete
+                </span>
+              </div>
+              <div style="display:flex;justify-content:space-between;font-size:0.875rem;align-items:center;">
+                <span>Methodology</span>
+                <span class="status-pill status-pill-green">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  Complete
+                </span>
+              </div>
+              <div style="display:flex;justify-content:space-between;font-size:0.875rem;align-items:center;">
+                <span>Evaluation Plan</span>
+                <span class="status-pill status-pill-green">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  Complete
+                </span>
+              </div>
+              <div style="display:flex;justify-content:space-between;font-size:0.875rem;align-items:center;">
+                <span>Budget Justification</span>
+                <span class="status-pill status-pill-green">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  Complete
+                </span>
+              </div>
+              <div style="display:flex;justify-content:space-between;font-size:0.875rem;align-items:center;">
+                <span>Organizational Capacity</span>
+                <span class="status-pill status-pill-green">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  Complete
+                </span>
+              </div>
+            </div>
+          </div>
+          <div style="background:var(--gray-50);border:1.5px solid var(--gray-200);border-radius:var(--radius-xl);padding:1.5rem;">
+            <div style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.05em;color:var(--gray-400);font-weight:700;margin-bottom:0.75rem;display:flex;align-items:center;gap:0.4rem;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+              Quick Actions
+            </div>
+            <div style="display:flex;flex-direction:column;gap:0.75rem;">
+              <button onclick="switchTab('narrative'); document.querySelector('.tabs-container').scrollIntoView({behavior:'smooth'})"
+                class="quick-action-btn quick-action-blue">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                View Project Narrative
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-left:auto"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </button>
+              <button onclick="switchTab('compliance'); document.querySelector('.tabs-container').scrollIntoView({behavior:'smooth'})"
+                class="quick-action-btn quick-action-green">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="m9 14 2 2 4-4"/></svg>
+                Check Compliance
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-left:auto"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </button>
+              <button onclick="exportApplication(null, 'pdf')"
+                class="quick-action-btn quick-action-purple">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                Export PDF
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-left:auto"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB: PROJECT NARRATIVE -->
+      <div class="tab-content" id="tab-narrative">
+        <div class="content-section-title">
+          <div class="content-section-icon" style="background:#e0e7ff;color:#4F46E5;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+          </div>
+          Project Narrative
+        </div>
+        <button class="copy-btn" onclick="copyToClipboard('narrative-content')">
+          <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+          Copy to Clipboard
+        </button>
+        <div id="narrative-content"></div>
+      </div>
+
+      <!-- TAB: GOALS & OBJECTIVES -->
+      <div class="tab-content" id="tab-goals">
+        <div class="content-section-title">
+          <div class="content-section-icon" style="background:#e0e7ff;color:#6366F1;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+          </div>
+          Goals & Objectives
+        </div>
+        <button class="copy-btn" onclick="copyToClipboard('goals-content')">
+          <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+          Copy to Clipboard
+        </button>
+        <div id="goals-content"></div>
+      </div>
+
+      <!-- TAB: METHODOLOGY -->
+      <div class="tab-content" id="tab-methodology">
+        <div class="content-section-title">
+          <div class="content-section-icon" style="background:#d1fae5;color:#059669;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+          </div>
+          Project Methodology
+        </div>
+        <button class="copy-btn" onclick="copyToClipboard('methodology-content')">
+          <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+          Copy to Clipboard
+        </button>
+        <div id="methodology-content"></div>
+      </div>
+
+      <!-- TAB: EVALUATION -->
+      <div class="tab-content" id="tab-evaluation">
+        <div class="content-section-title">
+          <div class="content-section-icon" style="background:#fef3c7;color:#d97706;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+          </div>
+          Evaluation Plan
+        </div>
+        <button class="copy-btn" onclick="copyToClipboard('evaluation-content')">
+          <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+          Copy to Clipboard
+        </button>
+        <div id="evaluation-content"></div>
+      </div>
+
+      <!-- TAB: BUDGET -->
+      <div class="tab-content" id="tab-budget">
+        <div class="content-section-title">
+          <div class="content-section-icon" style="background:#fee2e2;color:#dc2626;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          </div>
+          Budget Justification
+        </div>
+        <button class="copy-btn" onclick="copyToClipboard('budget-content')">
+          <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+          Copy to Clipboard
+        </button>
+        <div id="budget-content"></div>
+      </div>
+
+      <!-- TAB: ORG CAPACITY -->
+      <div class="tab-content" id="tab-capacity">
+        <div class="content-section-title">
+          <div class="content-section-icon" style="background:#fce7f3;color:#be185d;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="8 21 12 17 16 21"/><line x1="12" y1="17" x2="12" y2="10"/><path d="M7 4h10l2 3-2 3H7L5 7l2-3z"/><path d="M5 7c0 5 2 9 7 9s7-4 7-9"/></svg>
+          </div>
+          Organizational Capacity
+        </div>
+        <button class="copy-btn" onclick="copyToClipboard('capacity-content')">
+          <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+          Copy to Clipboard
+        </button>
+        <div id="capacity-content"></div>
+      </div>
+
+      <!-- TAB: RFP ANALYSIS -->
+      <div class="tab-content" id="tab-rfp-analysis">
+        <div class="content-section-title">
+          <div class="content-section-icon" style="background:#eef2ff;color:#4F46E5;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          </div>
+          RFP / NOFO Analysis
+        </div>
+        <div id="rfp-analysis-content"></div>
+      </div>
+
+      <!-- TAB: AGENCY RESEARCH -->
+      <div class="tab-content" id="tab-agency">
+        <div class="content-section-title">
+          <div class="content-section-icon" style="background:#e0e7ff;color:#4F46E5;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01M16 6h.01M12 6h.01M12 10h.01M12 14h.01M8 10h.01M8 14h.01M16 10h.01M16 14h.01"/></svg>
+          </div>
+          Funding Agency Intelligence
+        </div>
+        <div id="agency-research-content"></div>
+      </div>
+
+      <!-- TAB: COMPLIANCE -->
+      <div class="tab-content" id="tab-compliance">
+        <div class="content-section-title">
+          <div class="content-section-icon" style="background:#d1fae5;color:#059669;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="m9 14 2 2 4-4"/></svg>
+          </div>
+          Compliance Checklist
+        </div>
+        <div id="compliance-content"></div>
+      </div>
+
+    </div><!-- /.tabs-container -->
+  </div><!-- /#results-section -->
+
+  <!-- HISTORY SECTION -->
+  <div id="history-section" style="display:none;">
+    <div class="history-header">
+      <div>
+        <h2 class="history-title">My Applications</h2>
+        <p class="history-subtitle">View and download your previously generated grant applications.</p>
+      </div>
+      <button class="btn btn-outline btn-sm" onclick="showSection('form'); window.scrollTo({top:0,behavior:'smooth'})">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        Back to Form
+      </button>
+    </div>
+    <div id="history-list"></div>
+  </div>
+
+</section>
+
+<!-- ===== HOW IT WORKS ===== -->
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div style="max-width:1100px;margin:0 auto;">
+    <div style="margin-bottom:1rem;font-size:1rem;font-weight:700;color:#818CF8;display:flex;align-items:center;justify-content:center;gap:0.5rem;">
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>
+      GrantWriter Pro
+    </div>
+    <p>AI-powered grant writing assistance. Always review and customize AI-generated content before submission.</p>
+    <p style="margin-top:0.5rem;">Built with Claude AI · For educational and professional use</p>
+  </div>
+</footer>
+
+<!-- TOAST CONTAINER -->
+<div class="toast-container" id="toast-container"></div>
+
+<script src="/static/js/icons.js"></script>
+<script src="/static/js/app.js"></script>
+</body>
+</html>
