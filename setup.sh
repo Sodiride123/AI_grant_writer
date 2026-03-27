@@ -2,15 +2,15 @@
 # Script 1: Clone repo and install dependencies (run once to prepare the image)
 set -e
 
-git clone https://github.com/Sodiride123/AI_grant_writer.git /workspace/grantwriter-pro 2>/dev/null || echo "App already exists at /workspace/grantwriter-pro"
+git clone https://github.com/Sodiride123/AI_grant_writer.git /workspace/AI_grant_writer 2>/dev/null || echo "App already exists at /workspace/AI_grant_writer"
 pip install flask flask-cors gunicorn python-docx pypdf2 fpdf2 anthropic 2>/dev/null
-mkdir -p /workspace/grantwriter-pro/uploads /workspace/grantwriter-pro/jobs
+mkdir -p /workspace/AI_grant_writer/uploads /workspace/AI_grant_writer/jobs
 
 # Create supervisor startup config
 cat > /workspace/_superninja_startup.conf << 'EOF'
 [program:7860_python3.11]
 command=/bin/bash -c "source ~/.bashrc 2>/dev/null; exec /usr/local/bin/python3.11 /usr/local/bin/gunicorn --bind 0.0.0.0:7860 --workers 2 --threads 4 --timeout 300 --keep-alive 5 --log-level info app:app"
-directory=/workspace/grantwriter-pro
+directory=/workspace/AI_grant_writer
 user=root
 autostart=true
 autorestart=true
