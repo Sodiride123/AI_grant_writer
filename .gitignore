@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+grantwriter.db
+jobs/*.json
+uploads/*
+!uploads/.gitkeep
+!jobs/.gitkeep
+*.ctl
