@@ -2,7 +2,7 @@
 # Script 2: Start the app (run by agent or user after image is ready)
 
 # Ensure supervisor config is loaded
-cp /workspace/_superninja_startup.conf /etc/supervisor/conf.d/_superninja_startup.conf 2>/dev/null
+cp /workspace/AI_grant_writer/_superninja_startup.conf /etc/supervisor/conf.d/_superninja_startup.conf 2>/dev/null
 supervisorctl reread 2>/dev/null; supervisorctl update 2>/dev/null
 
 # Clear port and start clean
